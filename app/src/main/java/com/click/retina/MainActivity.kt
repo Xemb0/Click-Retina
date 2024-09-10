@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val dataRepository = DataRepository()
         networkChecker = NetworkChecker(getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager)
         val viewModelFactory = MainViewModelFactory(dataRepository, networkChecker)

@@ -62,7 +62,7 @@
             app:indicatorColor="@color/my_tertiary"
             app:indicatorSize="114dp"
             android:rotation="90"
-            app:trackColor="@color/my_primary"
+            app:trackColor="@color/my_background"
             app:trackThickness="12dp" />
 
         <TextView
