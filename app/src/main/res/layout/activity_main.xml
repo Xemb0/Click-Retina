@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity"
+    android:background="@color/my_background">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:backgroundTint="@color/my_secondary"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android Assignment"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:paddingHorizontal="15dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginBottom="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_margin="8dp"
+                android:paddingTop="16dp"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OVERALL SCORE"
+                android:textColor="@color/my_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="16dp"
+                android:backgroundTint="@color/white"
+                app:cardUseCompatPadding="true"
+                android:id="@+id/overall_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+                <include
+                    android:id="@+id/overall_scroll_include"
+                    layout="@layout/score_options"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:paddingTop="16dp"
+                android:id="@+id/txTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TITLE"
+                android:textColor="@color/my_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="16dp"
+                android:backgroundTint="@color/my_primary"
+                app:cardUseCompatPadding="true"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txTitleData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="loading.."
+                        android:textColor="@color/textcolor_dark"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                    <Button
+                        android:id="@+id/btnCopyTitle"
+                        android:text="COPY"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:clickable="true"
+                        android:backgroundTint="@color/my_primary"
+                        android:textColor="#2f80ed"
+                        app:layout_constraintBottom_toBottomOf="@+id/view"
+                        app:layout_constraintEnd_toStartOf="@+id/view"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view" />
+
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="2dp"
+                        android:layout_height="0dp"
+                        android:background="@color/my_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btnShareTitle"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/btnCopyTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/txTitleData" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnShareTitle"
+                        android:text="SHARE"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparent"
+                        android:textColor="#2f80ed"
+                        app:layout_constraintBottom_toBottomOf="@+id/view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="@+id/view" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_margin="8dp"
+                android:paddingTop="16dp"
+                android:id="@+id/txDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:textColor="@color/my_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="16dp"
+                android:backgroundTint="@color/my_primary"
+                app:cardUseCompatPadding="true"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:textColor="@color/textcolor_dark"
+                        android:id="@+id/txDescriptionData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="16sp"
+                        android:text="loading.."
+                        app:layout_constraintBottom_toTopOf="@+id/horizontal_description"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+<!--                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, "-->
+                    <Button
+                        android:id="@+id/btnCopyDescription"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:backgroundTint="@color/my_primary"
+                        android:text="COPY"
+                        android:textColor="#2f80ed"
+                        app:layout_constraintBottom_toBottomOf="@+id/horizontal_description"
+                        app:layout_constraintEnd_toStartOf="@+id/horizontal_description"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/horizontal_description" />
+
+                    <View
+                        android:id="@+id/horizontal_description"
+                        android:layout_width="2dp"
+                        android:layout_height="0dp"
+                        android:background="@color/my_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btnShareDescription"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/btnCopyDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/txDescriptionData" />
+
+                    <Button
+                        android:id="@+id/btnShareDescription"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/my_primary"
+                        android:text="SHARE"
+                        android:textColor="#2f80ed"
+                        app:layout_constraintBottom_toBottomOf="@+id/horizontal_description"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/horizontal_description"
+                        app:layout_constraintTop_toTopOf="@+id/horizontal_description" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

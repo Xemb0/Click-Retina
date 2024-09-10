@@ -1,0 +1,42 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/circularProgressIndicator"
+        android:layout_width="261dp"
+        android:layout_height="152dp"
+        android:indeterminate="false"
+        app:indicatorColor="@color/my_secondary"
+        app:indicatorSize="128dp"
+        android:layout_centerInParent="true"
+        app:trackColor="@color/my_secondary"
+        app:trackThickness="15dp" />
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="53"
+        android:textStyle="bold"
+        android:translationY="-12dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/my_secondary"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_below="@id/progressText"
+        android:id="@+id/progressTextUpon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/100"
+        android:translationY="12dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+</RelativeLayout>
